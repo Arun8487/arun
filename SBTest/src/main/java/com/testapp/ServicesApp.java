@@ -19,4 +19,11 @@ public class ServicesApp {
 		return "HI Hello";
 	}
 
+	@RequestMapping("/getnew")
+	public String getNewMsg()
+	{
+		return "HI Hello New";
+	}
+
+	
 }
