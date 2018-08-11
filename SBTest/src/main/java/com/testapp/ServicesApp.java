@@ -1,16 +1,20 @@
 package com.testapp;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
+@RequestMapping("/api")
 public class ServicesApp {
 	
+	@Value("${arun.urls}")
+	private String welcomeMessage;
 	
 	@RequestMapping("/")
    public String home() {
-        return "Hello World!";
+        return welcomeMessage;
     }
 	
 	@RequestMapping("/getMsg")
